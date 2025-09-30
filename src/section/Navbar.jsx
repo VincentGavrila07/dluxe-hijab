@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+// Daftar menu item yang sama untuk desktop dan mobile
+const menuItems = ["Home", "About", "Products", "Portofolio ", "Achievment", "Partner", "Contact"];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md">
+    // Menggunakan perubahan yang sudah dilakukan sebelumnya untuk warna solid di mobile
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black md:bg-black/30 md:backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold text-[#D4AF37] tracking-wide">
@@ -14,7 +18,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
-          {["Home", "About", "Products", "Portofolio ", "Achievment", "Partner", "Contact"].map((item) => (
+          {menuItems.map((item) => (
             <li
               key={item}
               className="text-white relative cursor-pointer transition group"
@@ -52,7 +56,8 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <div className="flex flex-col items-start p-6 gap-6">
-          {["Home", "About", "Products", "Gallery", "Contact"].map((item) => (
+          {/* Perubahan ada di sini: Menggunakan menuItems yang baru */}
+          {menuItems.map((item) => (
             <button
               key={item}
               onClick={() => setOpen(false)}
