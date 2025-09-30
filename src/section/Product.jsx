@@ -8,7 +8,7 @@ const Product = () => {
         {/* Bagian Putih */}
         <div className="h-1/2 bg-white"></div>
         {/* Bagian Hitam + Lengkungan */}
-        <div className="relative h-1/2 bg-black">
+        <div className="relative h-1/2 bg-[#1A1A1A]">
           <svg
             className="absolute -top-20 left-0 w-full"
             xmlns="http://www.w3.org/2000/svg"
