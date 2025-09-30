@@ -15,7 +15,7 @@ const Product = () => {
             viewBox="0 0 1440 320"
           >
             <path
-              fill="#000000"
+              fill="#1A1A1A"
               d="M0,192 C360,300 1080,80 1440,192 L1440,320 L0,320 Z"
             ></path>
           </svg>
@@ -63,7 +63,7 @@ const Product = () => {
                
                 <p className="mt-3 font-bold">{home.price}</p>
                 <button className="relative mt-3 px-5 py-2 border-2 border-yellow-500 text-yellow-600 font-medium rounded-md overflow-hidden group">
-                  <span className="relative z-10 group-hover:text-black">
+                  <span className="relative z-10 group-hover:text-[#1A1A1A]">
                     Check Now
                   </span>
                   <span className="absolute inset-0 bg-yellow-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
@@ -74,7 +74,7 @@ const Product = () => {
         </div>
 
         {/* Testimonial */}
-        <div className="bg-black text-white p-6 rounded-lg max-w-2xl">
+        <div className="bg-[#1A1A1A] text-white p-6 rounded-lg max-w-2xl">
           <p className="italic mb-3">
             "Elegance in Every Veil."
           </p>
