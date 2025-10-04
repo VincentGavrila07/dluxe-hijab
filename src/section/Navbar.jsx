@@ -12,8 +12,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-black md:bg-black/30 md:backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-[#D4AF37] tracking-wide">
-          DluxeHijab
+        <div className="tracking-wide">
+          <img src="/assets/LogoText.png" alt=""  className="w-20 h-20"/>
         </div>
 
         {/* Desktop Menu */}

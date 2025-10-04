@@ -1,33 +1,17 @@
 import React from "react";
+import { CheckCircle } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 const Product = () => {
   return (
-    <section className="relative">
-      {/* Background Split with Concave Curve */}
-      <div className="absolute inset-0">
-        {/* Bagian Putih */}
-        <div className="h-1/2 bg-white"></div>
-        {/* Bagian Hitam + Lengkungan */}
-        <div className="relative h-1/2 bg-[#1A1A1A]">
-          <svg
-            className="absolute -top-20 left-0 w-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-          >
-            <path
-              fill="#1A1A1A"
-              d="M0,192 C360,300 1080,80 1440,192 L1440,320 L0,320 Z"
-            ></path>
-          </svg>
-        </div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+    <section className="bg-white">
+      <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Title */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">
-            Produk & Layanan
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900">Produk & Layanan</h2>
           <a href="#" className="text-gray-600 hover:text-gray-900">
             Explore All →
           </a>
@@ -36,31 +20,21 @@ const Product = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {[
-            {
-              title: "Hijab Premium",
-              price: "Pashmina, segi empat, instan.",
-
-            },
-            {
-              title: "Aksesoris Hijab",
-              price: "Inner, ciput, bros.",
-
-            },
+            { title: "Hijab Premium", price: "Pashmina, segi empat, instan." },
+            { title: "Aksesoris Hijab", price: "Inner, ciput, bros." },
             {
               title: "Exclusive Collection",
               price: "Edisi terbatas dengan desain khas Dluxe Hijab.",
-
             },
           ].map((home, i) => (
             <div
               key={i}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white border rounded-lg shadow-md overflow-hidden"
             >
               <div className="h-48 bg-gray-200"></div>
               <div className="p-4">
                 <h3 className="font-semibold text-gray-900">{home.title}</h3>
                 <p className="text-sm text-gray-500">Dluxe Hijab</p>
-               
                 <p className="mt-3 font-bold">{home.price}</p>
                 <button className="relative mt-3 px-5 py-2 border-2 border-yellow-500 text-yellow-600 font-medium rounded-md overflow-hidden group">
                   <span className="relative z-10 group-hover:text-[#1A1A1A]">
@@ -73,13 +47,78 @@ const Product = () => {
           ))}
         </div>
 
-        {/* Testimonial */}
-        <div className="bg-[#1A1A1A] text-white p-6 rounded-lg max-w-2xl">
-          <p className="italic mb-3">
-            "Elegance in Every Veil."
-          </p>
-          <p className="font-semibold">DluxeHijab</p>
+        {/* Kelebihan Produk */}
+        <div className="text-center mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            Kelebihan Produk Dluxe Hijab
+          </h3>
+          <div className="max-w-3xl mx-auto">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 text-left">
+              {[
+                "Bahan berkualitas, adem & nyaman",
+                "Warna tahan lama & tidak mudah pudar",
+                "Model timeless & mudah dipadukan",
+                "Harga kompetitif",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center">
+                  <CheckCircle className="text-green-500 w-5 h-5 mr-2" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+      </div>
+
+      {/* Produk Berdasarkan Warna */}
+      <div className="bg-[#1A1A1A] py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">
+            Koleksi Berdasarkan Warna
+          </h3>
+          <Swiper
+            modules={[Navigation]}
+            navigation
+            spaceBetween={30}
+            slidesPerView={1}
+          >
+            {[
+              "Cokelat Cream",
+              "Biru Dongker",
+              "Abu-Abu",
+              "Cokelat Umber",
+              "Baby Pink",
+              "Ungu Iris",
+              "Putih Mutiara",
+            ].map((color, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="bg-white rounded-lg shadow-md p-6">
+                  <h4 className="font-semibold text-lg mb-4 text-center text-gray-900">
+                    {color}
+                  </h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[1, 2, 3, 4].map((n) => (
+                      <div
+                        key={n}
+                        className="h-40 bg-gray-200 rounded-lg flex items-center justify-center"
+                      >
+                        <span className="text-gray-500 text-sm">
+                          Foto {n} {color}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+
+      {/* Testimonial */}
+      <div className="bg-[#1A1A1A] text-white p-6 text-center">
+        <p className="italic mb-3">"Elegance in Every Veil."</p>
+        <p className="font-semibold">DluxeHijab</p>
       </div>
     </section>
   );

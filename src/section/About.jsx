@@ -16,9 +16,9 @@ const AboutSection = () => {
           {/* Image (kiri di desktop) */}
           <div className="relative order-2 md:order-1">
             <img
-              src="/assets/Hero.png"
+              src="/assets/Profile.jpeg"
               alt="Construction"
-              className="w-full h-[400px] object-cover rounded-3xl [clip-path:polygon(0_0,100%_0,100%_70%,70%_70%,70%_100%,0_100%)]"
+              className="w-full h-[400px] object-cover rounded-3xl shadow-lg"
             />
           </div>
 
