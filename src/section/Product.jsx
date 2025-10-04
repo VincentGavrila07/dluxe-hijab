@@ -5,6 +5,77 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
+// ----------- DATA FOTO BARU -----------
+// Anda bisa menambahkan URL gambar nyata di sini.
+// Pastikan gambar-gambar ini ada di folder 'public' atau di hosting gambar.
+// Contoh: "/images/cokelat-cream-1.jpg"
+const productColors = [
+  {
+    name: "Cokelat Cream",
+    images: [
+      "/images/cokelat-cream-1.jpg",
+      "/images/cokelat-cream-2.jpg",
+      "/images/cokelat-cream-3.jpg",
+      "/images/cokelat-cream-4.jpg",
+    ],
+  },
+  {
+    name: "Biru Dongker",
+    images: [
+      "/images/biru-dongker-1.jpg",
+      "/images/biru-dongker-2.jpg",
+      "/images/biru-dongker-3.jpg",
+      "/images/biru-dongker-4.jpg",
+    ],
+  },
+  {
+    name: "Abu-Abu",
+    images: [
+      "/images/abu-abu-1.jpg",
+      "/images/abu-abu-2.jpg",
+      "/images/abu-abu-3.jpg",
+      "/images/abu-abu-4.jpg",
+    ],
+  },
+  {
+    name: "Cokelat Umber",
+    images: [
+      "/images/cokelat-umber-1.jpg",
+      "/images/cokelat-umber-2.jpg",
+      "/images/cokelat-umber-3.jpg",
+      "/images/cokelat-umber-4.jpg",
+    ],
+  },
+  {
+    name: "Baby Pink",
+    images: [
+      "/images/baby-pink-1.jpg",
+      "/images/baby-pink-2.jpg",
+      "/images/baby-pink-3.jpg",
+      "/images/baby-pink-4.jpg",
+    ],
+  },
+  {
+    name: "Ungu Iris",
+    images: [
+      "/images/ungu-iris-1.jpg",
+      "/images/ungu-iris-2.jpg",
+      "/images/ungu-iris-3.jpg",
+      "/images/ungu-iris-4.jpg",
+    ],
+  },
+  {
+    name: "Putih Mutiara",
+    images: [
+      "/images/putih-mutiara-1.jpg",
+      "/images/putih-mutiara-2.jpg",
+      "/images/putih-mutiara-3.jpg",
+      "/images/putih-mutiara-4.jpg",
+    ],
+  },
+];
+// -------------------------------------
+
 const Product = () => {
   return (
     <section className="bg-white">
@@ -82,29 +153,27 @@ const Product = () => {
             spaceBetween={30}
             slidesPerView={1}
           >
-            {[
-              "Cokelat Cream",
-              "Biru Dongker",
-              "Abu-Abu",
-              "Cokelat Umber",
-              "Baby Pink",
-              "Ungu Iris",
-              "Putih Mutiara",
-            ].map((color, idx) => (
+            {productColors.map((colorData, idx) => ( // Mengubah `color` menjadi `colorData`
               <SwiperSlide key={idx}>
                 <div className="bg-white rounded-lg shadow-md p-6">
                   <h4 className="font-semibold text-lg mb-4 text-center text-gray-900">
-                    {color}
+                    {colorData.name} {/* Menggunakan colorData.name */}
                   </h4>
                   <div className="grid grid-cols-2 gap-4">
-                    {[1, 2, 3, 4].map((n) => (
+                    {colorData.images.map((imageSrc, n) => ( // Mengulang berdasarkan array images
                       <div
                         key={n}
-                        className="h-40 bg-gray-200 rounded-lg flex items-center justify-center"
+                        className="relative w-full pb-[150%] rounded-lg overflow-hidden" // pb-[150%] untuk rasio potret 2:3
                       >
-                        <span className="text-gray-500 text-sm">
-                          Foto {n} {color}
-                        </span>
+                        <img
+                          src={imageSrc} // Sumber gambar dari data
+                          alt={`Foto ${n + 1} ${colorData.name}`} // Alt text yang deskriptif
+                          className="absolute inset-0 w-full h-full object-cover" // Gambar mengisi div
+                        />
+                        {/* Jika Anda ingin teks overlay, Anda bisa menambahkannya di sini */}
+                        {/* <span className="absolute bottom-2 left-2 text-white text-xs bg-black bg-opacity-50 p-1 rounded">
+                          Foto {n + 1} {colorData.name}
+                        </span> */}
                       </div>
                     ))}
                   </div>
