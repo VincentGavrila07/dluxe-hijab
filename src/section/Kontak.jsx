@@ -29,7 +29,7 @@ const Footer = () => {
         
         {/* Left - Brand Info */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">DluxeHijab</h2>
+          <img src="/assets/LogoText.png" alt="DluxeHijab Logo" className="w-24 mb-4" />
           <p className="text-sm leading-relaxed">
             Kami menghadirkan hijab berkualitas tinggi dengan desain elegan,
             bahan nyaman, dan warna yang tahan lama. Tampil percaya diri setiap hari
