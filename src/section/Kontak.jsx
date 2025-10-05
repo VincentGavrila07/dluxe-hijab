@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Phone, Mail, Instagram } from "lucide-react";
+import { Phone, Mail, Instagram, Section } from "lucide-react";
 
 const TikTokIcon = ({ size = 16, className }) => (
   <svg
@@ -24,76 +24,81 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#1A1A1A] text-gray-300 pt-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-700">
-        
-        {/* Left - Brand Info */}
-        <div>
-          <img src="/assets/LogoText.png" alt="DluxeHijab Logo" className="w-24 mb-4" />
-          <p className="text-sm leading-relaxed">
-            Kami menghadirkan hijab berkualitas tinggi dengan desain elegan,
-            bahan nyaman, dan warna yang tahan lama. Tampil percaya diri setiap hari
-            bersama DluxeHijab.
-          </p>
-        </div>
+    <section id="kontak">
 
-        {/* Middle - Navigation */}
-        <div>
-          <h4 className="font-semibold text-white mb-4">Navigasi</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-white">Home</a></li>
-            <li><a href="#" className="hover:text-white">Produk</a></li>
-            <li><a href="#" className="hover:text-white">Layanan</a></li>
-            <li><a href="#" className="hover:text-white">Tentang Kami</a></li>
-            <li><a href="#" className="hover:text-white">Kontak</a></li>
-          </ul>
-        </div>
+      <footer className="bg-[#1A1A1A] text-gray-300 pt-12">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-700">
+          
+          {/* Left - Brand Info */}
+          <div>
+            <img src="/assets/LogoText.png" alt="DluxeHijab Logo" className="w-24 mb-4" />
+            <p className="text-sm leading-relaxed">
+              Kami menghadirkan hijab berkualitas tinggi dengan desain elegan,
+              bahan nyaman, dan warna yang tahan lama. Tampil percaya diri setiap hari
+              bersama DluxeHijab.
+            </p>
+          </div>
 
-        {/* Middle - Contact */}
-        <div>
-          <h4 className="font-semibold text-white mb-4">Kontak</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <Phone size={16} /> +62 851-7985-3547
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail size={16} /> DluxeHijab@gmail.com
-            </li>
-            <li className="flex items-center gap-2">
-              <Instagram size={16} /> @DluxeHijab
-            </li>
-            <li className="flex items-center gap-2">
-              <TikTokIcon size={16} className="text-white" /> @dluxehijab_
-            </li>
-          </ul>
-        </div>
+          {/* Middle - Navigation */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Navigasi</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#home" className="hover:text-white">Home</a></li>
+              <li><a href="#about" className="hover:text-white">About</a></li>
+              <li><a href="#product" className="hover:text-white">Produk</a></li>
+              <li><a href="#portofolio" className="hover:text-white">Portofolio</a></li>
+              <li><a href="#achievement" className="hover:text-white">Achievment</a></li>
+              <li><a href="#clients" className="hover:text-white">Partner</a></li>
+              <li><a href="#kontak" className="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
 
-        {/* Right - WhatsApp Box */}
-        <div>
-          <h4 className="font-semibold text-white mb-4">Hubungi via WhatsApp</h4>
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <textarea
-              className="w-full p-2 border rounded-md text-black text-sm"
-              rows="3"
-              placeholder="Tulis pesan kamu..."
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-            <button
-              onClick={handleSend}
-              className="mt-3 w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md text-sm font-semibold"
-            >
-              Kirim ke WhatsApp
-            </button>
+          {/* Middle - Contact */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Kontak</h4>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-2">
+                <Phone size={16} /> +62 851-7985-3547
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail size={16} /> DluxeHijab@gmail.com
+              </li>
+              <li className="flex items-center gap-2">
+                <Instagram size={16} /> @DluxeHijab
+              </li>
+              <li className="flex items-center gap-2">
+                <TikTokIcon size={16} className="text-white" /> @dluxehijab_
+              </li>
+            </ul>
+          </div>
+
+          {/* Right - WhatsApp Box */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Hubungi via WhatsApp</h4>
+            <div className="bg-white p-4 rounded-lg shadow-md">
+              <textarea
+                className="w-full p-2 border rounded-md text-black text-sm"
+                rows="3"
+                placeholder="Tulis pesan kamu..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <button
+                onClick={handleSend}
+                className="mt-3 w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md text-sm font-semibold"
+              >
+                Kirim ke WhatsApp
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Copyright */}
-      <div className="text-center text-gray-500 text-sm py-4">
-        © 2025 DluxeHijab. All rights reserved.
-      </div>
-    </footer>
+        {/* Bottom Copyright */}
+        <div className="text-center text-gray-500 text-sm py-4">
+          © 2025 DluxeHijab. All rights reserved.
+        </div>
+      </footer>
+    </section>
   );
 };
 

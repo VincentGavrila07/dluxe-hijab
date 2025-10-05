@@ -1,29 +1,38 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-// Daftar menu item yang sama untuk desktop dan mobile
-const menuItems = ["Home", "About", "Products", "Portofolio ", "Achievment", "Partner", "Contact"];
+// Daftar menu dengan tautan ke section ID di halaman
+const menuItems = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Products", href: "#product" },
+  { name: "Portofolio", href: "#portofolio" },
+  { name: "Achievment", href: "#achievement" },
+  { name: "Partner", href: "#clients" },
+  { name: "Contact", href: "#kontak" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    // Menggunakan perubahan yang sudah dilakukan sebelumnya untuk warna solid di mobile
     <nav className="fixed top-0 left-0 w-full z-50 bg-black md:bg-black/30 md:backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="tracking-wide">
-          <img src="/assets/LogoText.png" alt=""  className="w-20 h-20"/>
+          <img src="/assets/LogoText.png" alt="Dluxe Hijab" className="w-25 h-15" />
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
           {menuItems.map((item) => (
-            <li
-              key={item}
-              className="text-white relative cursor-pointer transition group"
-            >
-              {item}
+            <li key={item.name} className="relative group">
+              <a
+                href={item.href}
+                className="text-white transition duration-200 hover:text-[#D4AF37]"
+              >
+                {item.name}
+              </a>
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
@@ -56,15 +65,15 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <div className="flex flex-col items-start p-6 gap-6">
-          {/* Perubahan ada di sini: Menggunakan menuItems yang baru */}
           {menuItems.map((item) => (
-            <button
-              key={item}
+            <a
+              key={item.name}
+              href={item.href}
               onClick={() => setOpen(false)}
               className="text-white text-lg hover:text-[#D4AF37] transition"
             >
-              {item}
-            </button>
+              {item.name}
+            </a>
           ))}
         </div>
       </div>

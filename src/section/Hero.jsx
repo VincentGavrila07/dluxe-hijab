@@ -2,7 +2,11 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="bg-[#1A1A1A] text-white h-auto md:min-h-screen flex items-center relative overflow-hidden pt-8 pb-10 md:pt-20 md:pb-20">
+    <section
+      id="home"
+      className="bg-[#1A1A1A] text-white h-auto md:min-h-screen flex items-center relative overflow-hidden pt-8 pb-10 md:pt-20 md:pb-20 mt-4 md:mt-0"
+    >
+
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center relative z-10 w-full mb-15 md:mb-0">
         {/* Text Content */}
         <div className='pt-16 md:pt-0 pb-32 md:pb-0'> 

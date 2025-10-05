@@ -9,76 +9,43 @@ import { Navigation } from "swiper/modules";
 // Anda bisa menambahkan URL gambar nyata di sini.
 // Pastikan gambar-gambar ini ada di folder 'public' atau di hosting gambar.
 // Contoh: "/images/cokelat-cream-1.jpg"
+// ----------- DATA FOTO BARU ------------
 const productColors = [
   {
     name: "Cokelat Cream",
-    images: [
-      "/images/cokelat-cream-1.jpg",
-      "/images/cokelat-cream-2.jpg",
-      "/images/cokelat-cream-3.jpg",
-      "/images/cokelat-cream-4.jpg",
-    ],
+    images: ["/assets/ck1.jpeg", "/assets/ck2.jpeg", "/assets/ck3.jpeg", "/assets/ck4.jpeg"],
   },
   {
     name: "Biru Dongker",
-    images: [
-      "/images/biru-dongker-1.jpg",
-      "/images/biru-dongker-2.jpg",
-      "/images/biru-dongker-3.jpg",
-      "/images/biru-dongker-4.jpg",
-    ],
+    images: ["/assets/bd1.jpeg", "/assets/bd2.jpeg", "/assets/bd3.jpeg", "/assets/bd4.jpeg"],
   },
   {
     name: "Abu-Abu",
-    images: [
-      "/images/abu-abu-1.jpg",
-      "/images/abu-abu-2.jpg",
-      "/images/abu-abu-3.jpg",
-      "/images/abu-abu-4.jpg",
-    ],
+    images: ["/assets/abu1.jpeg", "/assets/abu2.jpeg", "/assets/abu3.jpeg", "/assets/abu4.jpeg"],
   },
   {
     name: "Cokelat Umber",
-    images: [
-      "/images/cokelat-umber-1.jpg",
-      "/images/cokelat-umber-2.jpg",
-      "/images/cokelat-umber-3.jpg",
-      "/images/cokelat-umber-4.jpg",
-    ],
+    images: ["/assets/ck1.jpeg", "/assets/ck2.jpeg", "/assets/ck3.jpeg", "/assets/ck4.jpeg"],
   },
   {
     name: "Baby Pink",
-    images: [
-      "/images/baby-pink-1.jpg",
-      "/images/baby-pink-2.jpg",
-      "/images/baby-pink-3.jpg",
-      "/images/baby-pink-4.jpg",
-    ],
+    images: ["/assets/bp1.jpeg", "/assets/bp3.jpeg", "/assets/bp5.jpeg", "/assets/bp4.jpeg"],
   },
   {
     name: "Ungu Iris",
-    images: [
-      "/images/ungu-iris-1.jpg",
-      "/images/ungu-iris-2.jpg",
-      "/images/ungu-iris-3.jpg",
-      "/images/ungu-iris-4.jpg",
-    ],
+    images: ["/assets/ui1.jpeg", "/assets/ui2.jpeg", "/assets/ui3.jpeg", "/assets/ui4.jpeg"],
   },
   {
     name: "Putih Mutiara",
-    images: [
-      "/images/putih-mutiara-1.jpg",
-      "/images/putih-mutiara-2.jpg",
-      "/images/putih-mutiara-3.jpg",
-      "/images/putih-mutiara-4.jpg",
-    ],
+    images: ["/assets/pm1.jpeg", "/assets/pm2.jpeg", "/assets/pm3.jpeg", "/assets/pm4.jpeg"],
   },
 ];
+
 // -------------------------------------
 
 const Product = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-white" id="product">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Title */}
         <div className="flex justify-between items-center mb-8">
@@ -159,21 +126,17 @@ const Product = () => {
                   <h4 className="font-semibold text-lg mb-4 text-center text-gray-900">
                     {colorData.name} {/* Menggunakan colorData.name */}
                   </h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    {colorData.images.map((imageSrc, n) => ( // Mengulang berdasarkan array images
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-items-center">
+                    {colorData.images.map((imageSrc, n) => (
                       <div
                         key={n}
-                        className="relative w-full pb-[150%] rounded-lg overflow-hidden" // pb-[150%] untuk rasio potret 2:3
+                        className="relative w-full max-w-[250px] pb-[130%] rounded-lg overflow-hidden shadow-sm"
                       >
                         <img
-                          src={imageSrc} // Sumber gambar dari data
-                          alt={`Foto ${n + 1} ${colorData.name}`} // Alt text yang deskriptif
-                          className="absolute inset-0 w-full h-full object-cover" // Gambar mengisi div
+                          src={imageSrc}
+                          alt={`Foto ${n + 1} ${colorData.name}`}
+                          className="absolute inset-0 w-full h-full object-cover"
                         />
-                        {/* Jika Anda ingin teks overlay, Anda bisa menambahkannya di sini */}
-                        {/* <span className="absolute bottom-2 left-2 text-white text-xs bg-black bg-opacity-50 p-1 rounded">
-                          Foto {n + 1} {colorData.name}
-                        </span> */}
                       </div>
                     ))}
                   </div>

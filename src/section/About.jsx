@@ -9,7 +9,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section>
+    <section id="about">
       {/* === Intro & Image === */}
       <div className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">

@@ -21,7 +21,7 @@ const Achievement = () => {
   ];
 
   return (
-    <section className="bg-[#1A1A1A] py-16">
+    <section className="bg-[#1A1A1A] py-16" id="achievement">
       <div className="max-w-5xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">
