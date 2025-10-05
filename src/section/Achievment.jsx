@@ -24,9 +24,9 @@ const Achievement = () => {
     <section className="bg-[#1A1A1A] py-16" id="achievement">
       <div className="max-w-5xl mx-auto px-6">
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">
-          Prestasi & Penghargaan
-        </h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-12">
+            Prestasi <span className="text-[#D4AF37]">dan Penghargaan</span>
+          </h2>
 
         {/* Timeline */}
         <div className="relative border-l-2 border-gray-600">

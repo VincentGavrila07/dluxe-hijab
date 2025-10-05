@@ -24,8 +24,8 @@ const AboutSection = () => {
 
           {/* Text (kanan di desktop) */}
           <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Welcome To DluxeHijab
+            <h2 className="text-3xl md:text-4xl font-extrabold  text-black mb-10">
+            Welcome To <span className="text-[#D4AF37]">D'luxe Hijab</span>
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Dluxe Hijab adalah brand fashion muslim yang berfokus pada hijab

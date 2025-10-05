@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-// Daftar menu dengan tautan ke section ID di halaman
 const menuItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -16,11 +15,21 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black md:bg-black/30 md:backdrop-blur-md">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ease-in-out border-b-[1px] border-[#D4AF37] ${
+        open
+          ? "bg-black"
+          : "bg-black md:bg-black/40 md:backdrop-blur-lg"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="tracking-wide">
-          <img src="/assets/LogoText.png" alt="Dluxe Hijab" className="w-25 h-15" />
+          <img
+            src="/assets/LogoText.png"
+            alt="Dluxe Hijab"
+            className="w-24 h-16"
+          />
         </div>
 
         {/* Desktop Menu */}

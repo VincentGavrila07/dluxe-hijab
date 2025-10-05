@@ -21,13 +21,22 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-6">
-            <button className="px-6 py-3 bg-[#D4AF37] text-[#1A1A1A] font-semibold rounded-md hover:bg-[#b8922d] transition cursor-pointer">
-              Get Started
-            </button>
+            <a
+              href="https://wa.me/6285179853547?text=Halo%20D'luxe%20Hijab%2C%20saya%20ingin%20bertanya"
+
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-[#1A1A1A] font-semibold rounded-md hover:bg-[#b8922d] transition cursor-pointer"
+            >
+              Tanya Sekarang
+            </a>
+
             <button className="relative px-6 py-3 border-2 border-[#D4AF37] text-[#D4AF37] font-semibold rounded-md overflow-hidden group cursor-pointer">
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-[#1A1A1A]">
+              <a className="relative z-10 transition-colors duration-300 group-hover:text-[#1A1A1A]"
+                href="#product"
+              >
                 Our Service
-              </span>
+              </a>
               <span className="absolute left-0 top-0 h-full w-0 bg-[#D4AF37] transition-all duration-500 group-hover:w-full"></span>
             </button>
           </div>

@@ -24,9 +24,9 @@ const Portfolio = () => {
     <section className="bg-white py-16" id="portofolio">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Portofolio / Hasil Kerja
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-black mb-12">
+            Portofolio <span className="text-[#D4AF37]">dan Hasil Kerja</span>
+          </h2>
         <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
           Perjalanan DluxeHijab dalam menghadirkan hijab berkualitas tinggi
           untuk muslimah Indonesia.
