@@ -61,24 +61,43 @@ const Product = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {[
-            { title: "Hijab Premium", price: "Pashmina, segi empat, instan." },
-            { title: "Aksesoris Hijab", price: "Inner, ciput, bros." },
+            {
+              title: "Hijab Premium",
+              price: "Pashmina, segi empat, instan.",
+              image: "/assets/ck1.jpeg",
+            },
+            {
+              title: "Aksesoris Hijab",
+              price: "Inner, ciput, bros.",
+              image: "/assets/ck1.jpeg",
+            },
             {
               title: "Exclusive Collection",
               price: "Edisi terbatas dengan desain khas Dluxe Hijab.",
+              image: "/assets/ck1.jpeg",
             },
           ].map((home, i) => (
             <div
               key={i}
-              className="bg-white border rounded-lg shadow-md overflow-hidden"
+              className="bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="h-48 bg-gray-200"></div>
+              {/* Gambar produk */}
+              <img
+                src={home.image}
+                alt={home.title}
+                className="h-48 w-full object-cover"
+              />
+
               <div className="p-4">
                 <h3 className="font-semibold text-gray-900">{home.title}</h3>
                 <p className="text-sm text-gray-500">Dluxe Hijab</p>
                 <p className="mt-3 font-bold">{home.price}</p>
+
                 <button className="relative mt-3 px-5 py-2 border-2 border-yellow-500 text-yellow-600 font-medium rounded-md overflow-hidden group">
-                  <a className="relative z-10 group-hover:text-[#1A1A1A]" href="#collection">
+                  <a
+                    className="relative z-10 group-hover:text-[#1A1A1A]"
+                    href="#collection"
+                  >
                     Check Now
                   </a>
                   <span className="absolute inset-0 bg-yellow-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
@@ -87,6 +106,7 @@ const Product = () => {
             </div>
           ))}
         </div>
+
 
         {/* Kelebihan Produk */}
         <div className="text-center mb-16">
