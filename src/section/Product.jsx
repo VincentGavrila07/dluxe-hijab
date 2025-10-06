@@ -66,11 +66,7 @@ const Product = () => {
               price: "Pashmina, segi empat, instan.",
               image: "/assets/ck1.jpeg",
             },
-            {
-              title: "Aksesoris Hijab",
-              price: "Inner, ciput, bros.",
-              image: "/assets/ck1.jpeg",
-            },
+            
             {
               title: "Exclusive Collection",
               price: "Edisi terbatas dengan desain khas Dluxe Hijab.",
